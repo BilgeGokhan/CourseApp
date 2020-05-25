@@ -1,0 +1,59 @@
+﻿@model Student;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Apply</title>
+
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <div class="card">
+        <div class="card-header text-center bg-success">
+            <h4>Apply the course</h4>
+        </div>
+
+        <div class="card-body">
+            <form action="/course/apply" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="Name">Name :</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email">Email :</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Phone">Phone :</label>
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="WillAttend">WillAttend :</label>
+                    <select asp-for="WillAttend" class="form-control">
+                        <option value="">Select an option</option>
+                        <option value="true">I will Attend</option>
+                        <option value="false">I will no Attend</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>
